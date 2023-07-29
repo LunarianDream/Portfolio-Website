@@ -36,7 +36,7 @@ main {
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 30vh 1fr 1.3fr 2fr 2fr;
+    grid-template-rows: 30vh auto 1fr 2fr 2fr;
 }
 
 
@@ -194,7 +194,7 @@ h2 {
 .top_mountain_container {
     width: 100%;
     position: absolute;
-    top: -75px;
+    top: -70px;
 }
 
 .skill_card {
@@ -242,6 +242,39 @@ h4 {
     width: 100%;
     position: absolute;
     bottom: -70px;
+}
+
+.project_wrapper {
+    margin: 1rem 0;
+}
+
+.project_title {
+    font-size: 1.1rem;
+    text-align: center;
+    padding-bottom: .5rem;
+    text-decoration: dashed underline;
+    text-underline-offset: .25em;
+    -webkit-text-underline-offset: .25em;
+    -webkit-text-decoration: dashed underline;
+}
+
+.project_description {
+    background-color: var(--accent-color-2-2);
+    color: var(--accent-color-1);
+    padding: 1em;
+}
+
+.project_links {
+    margin-top: .5rem;
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.project_link {
+    width: 25%;
 }
 
 /* ====== Contact Me Section ====== */
