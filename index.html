@@ -13,7 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@0,1;0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,1;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
+    <div class="mobile_menu_overlay overlay_inactive"> 
+    </div>
     <header>
         <nav class="main_navigation">
             <ul class="desktop_navigation">
@@ -27,6 +30,16 @@
             <button class="resume_btn">Resume</button>
         </nav>
     </header>
+    <div class="mobile_menu_container closed">
+        <button class="mobile_menu_btn"><img src="./Resources/Icons/x-letter.svg"></button>
+        <ul class="mobile_menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact_me">Contact Me</a></li>
+            <li><button class="resume_btn">Resume</button></li>
+        </ul>
+    </div>
     <main>
         <section id="hero">
             <div class="face_pic">
@@ -44,34 +57,36 @@
         </section>
         <section id="skills">
             <h3>Skills</h3>
-            <div class="left_skills_column">
-                <div class="skill_card">
-                    <img src=./resources/icons/html5.svg alt="HTML" />
-                    <h4>HTML</h4>
+            <div class="skills_container">
+                <div class="left_skills_column">
+                    <div class="skill_card">
+                        <img src=./resources/icons/html5.svg alt="HTML" />
+                        <h4>HTML</h4>
+                    </div>
+                    <div class="skill_card">
+                        <img src=./resources/icons/css3.svg alt="CSS" />
+                        <h4>CSS</h4>
+                    </div>
                 </div>
-                <div class="skill_card">
-                    <img src=./resources/icons/css3.svg alt="CSS" />
-                    <h4>CSS</h4>
+                <div class="middle_skills_column">
+                    <div class="skill_card">
+                        <img src=./resources/icons/javascript.svg alt="JavaScript" />
+                        <h4>JavaScript</h4>
+                    </div>
+                    <div class="skill_card">
+                        <img src=./resources/icons/bootstrap.svg alt="Bootstrap" />
+                        <h4>Bootstrap</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="middle_skills_column">
-                <div class="skill_card">
-                    <img src=./resources/icons/javascript.svg alt="JavaScript" />
-                    <h4>JavaScript</h4>
-                </div>
-                <div class="skill_card">
-                    <img src=./resources/icons/bootstrap.svg alt="Bootstrap" />
-                    <h4>Bootstrap</h4>
-                </div>
-            </div>
-            <div class="right_skills_column">
-                <div class="skill_card">
-                    <img src=./resources/icons/npm.svg alt="NPM" />
-                    <h4>NPM</h4>
-                </div>
-                <div class="skill_card">
-                    <img src=./resources/icons/jquery.svg alt="Jquery" />
-                    <h4>JQuery</h4>
+                <div class="right_skills_column">
+                    <div class="skill_card">
+                        <img src=./resources/icons/npm.svg alt="NPM" />
+                        <h4>NPM</h4>
+                    </div>
+                    <div class="skill_card">
+                        <img src=./resources/icons/jquery.svg alt="Jquery" />
+                        <h4>JQuery</h4>
+                    </div>
                 </div>
             </div>
         </section>
@@ -80,23 +95,36 @@
             <div class="project_wrapper">
                 <!-- Project Title -->
                 <h4 class="project_title">Interactive Card Details (Frontend Mentor)</h4>
-                <!-- Project Image -->
-                <img src="./IMGS/interactive-card-details.png" alt="Interactive Card Details">
-                <!-- Project Description -->
-                <p class="project_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quo est maiores in eveniet adipisci odio eum maxime, cum quibusdam quasi ipsum sapiente quae, architecto nobis sit nemo facilis asperiores accusantium! Quibusdam tempore labore nisi mollitia at accusamus iusto error quae hic doloremque, ut voluptates sint alias blanditiis. Consequatur accusamus quidem dolor quae praesentium accusantium impedit vero, obcaecati nesciunt cumque vel provident excepturi hic, fuga ullam facere quisquam debitis voluptates quasi ut, quo exercitationem! Libero fugit ipsa a cupiditate neque vero vitae nihil suscipit illum ipsum delectus beatae id est doloremque, sapiente fuga magnam molestias cumque. Provident cupiditate eligendi ad.</p>
-                <!--Project Links -->
-                <div class="project_links">
-                    <button class="project_link" onclick="window.location.href='https://github.com/LunarianDream/Interactive-Card-Details';">Code</button>
-                    <button class="project_link">Site</button>
+                <div class="project_info_container">
+                    <!-- Project Image -->
+                    <div class="project_image_container">
+                        <img class="project_image" src="./IMGS/interactive-card-details.png" alt="Interactive Card Details">
+                    </div>
+                    <div class="project_description_container">
+                        <!-- Project Description -->
+                        <p class="project_description">Created a form to enter credit card information.  When the card information is keyed into the form, it is also transposed onto the larger card image.</p>
+
+                    </div>
                 </div>
+                    <!--Project Links -->
+                    <div class="project_links">
+                        <button class="project_link" onclick="window.location.href='https://github.com/LunarianDream/Interactive-Card-Details';">Code</button>
+                        <button class="project_link">Site</button>
+                    </div>
             </div>
             <div class="project_wrapper">
                 <!-- Project Title -->
                 <h4 class="project_title">Base Apparel (Frontend Mentor) </h4>
-                <!-- Project Image -->
-                <img src="./IMGS/base_apparel.png" alt="Base Apparel">
-                <!-- Project Description -->
-                <p class="project_description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse dolor atque ratione adipisci officia enim quisquam labore repellendus, eaque nostrum aliquam rem odit quos possimus doloribus ut aperiam praesentium quidem vel, quo molestiae ex? Accusamus minus dolores ea dolorem recusandae, expedita possimus tempora nulla dignissimos a sed ab odit eligendi temporibus autem optio ut assumenda asperiores omnis? Asperiores aspernatur accusamus iste sit, obcaecati quibusdam sunt! Quidem, quo necessitatibus. Sit rerum laboriosam, nostrum earum, fuga illo excepturi blanditiis a explicabo ad, veniam harum facilis praesentium nobis laborum aperiam distinctio cumque! Enim sunt laborum voluptatum voluptatibus possimus laudantium. Ipsam recusandae eius blanditiis!</p>
+                <div class="project_info_container">
+                    <!-- Project Image -->
+                    <div class="project_image_container">
+                        <img class="project_image" src="./IMGS/base_apparel.png" alt="Base Apparel">
+                    </div>
+                    <div class="project_description_container">
+                        <!-- Project Description -->
+                        <p class="project_description">Using design parameters from FrontEnd Mentor, I created a landing home page for a fictional clothing company.  This includes form validation for newsletter signups.</p>
+                    </div>
+                </div>
                 <!--Project Links -->
                 <div class="project_links">
                     <button class="project_link">Code</button>
@@ -104,31 +132,40 @@
                 </div>
             </div>
             <div class="project_wrapper">
-                <img src="" alt="">
+                <img  class="project_image" src="" alt="">
             </div>
         </section>
         <section id="contact_me">
             <h3>Let's Connect</h3>
-            <form>
+            <form method="POST" action="https://google.com">
                 <div class="form_row">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name">
+                    <span class="error">Cannot be blank.</span>
                 </div>
                 <div class="form_row">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email">
+                    <span class="error">Please enter a valid email address.</span>
+
                 </div>
                 <div class="form_row">
                     <label for="phone">Telephone Number</label>
                     <input type="tel" id="phone" name="phone">
+                    <span class="error">Please enter a valid US telephone number.</span>
+
                 </div>
                 <div class="form_row">
                     <label for="company">Company</label>
                     <input type="text" id="company" name="company">
+                    <span class="error">Cannot be blank</span>
+
                 </div>
                 <div class="form_row">
                     <label for="comments">Comments</label>
                     <textarea id="comments" name="comments"></textarea>
+                    <span class="error">Please leave a comment.</span>
+
                 </div>
                 <div class="form_row">
                     <button type="submit">Submit</button>
@@ -147,5 +184,6 @@
             </a>
         </div>
     </footer>
+    <script src="./JS/script.js"></script>
 </body>
 </html>
