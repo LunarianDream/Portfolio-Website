@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hello there, I am a front-end web developer.  Please take a look at my portfolio.">
+    <meta name="keywords" content="portfolio, web developer, Jelissa, Summers, Jelissa Summers, front-end, frontend, front end, web dev">
     <title>Jelissa Summers | Web Developer Portfolio</title>
     <!-- Stylesheets -->
     <link href="./CSS/main_styles.css" rel="stylesheet" />
@@ -20,24 +21,24 @@
     <header>
         <nav class="main_navigation">
             <ul class="desktop_navigation">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact_me">Contact Me</a></li>
+                <li><a class="nav_link" href="#about">About</a></li>
+                <li><a class="nav_link" href="#skills">Skills</a></li>
+                <li><a class="nav_link" href="#projects">Projects</a></li>
+                <li><a class="nav_link" href="#contact_me">Contact Me</a></li>
                 
             </ul>
             <button class="mobile_menu_btn">&#9776;</button>
-            <button class="resume_btn">Resume</button>
+            <a role="button" class="resume_btn" href="./Resources/Docs/Jelissa_Summers_Job_Resume.pdf" download>Resume</a>
         </nav>
     </header>
     <div class="mobile_menu_container closed">
         <button class="mobile_menu_btn"><img src="./Resources/Icons/x-letter.svg"></button>
         <ul class="mobile_menu">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact_me">Contact Me</a></li>
-            <li><button class="resume_btn">Resume</button></li>
+            <li><a class="nav_link" href="#about">About</a></li>
+            <li><a class="nav_link" href="#skills">Skills</a></li>
+            <li><a class="nav_link" href="#projects">Projects</a></li>
+            <li><a class="nav_link" href="#contact_me">Contact Me</a></li>
+            <li><a role="button" class="resume_btn" href="./Resources/Docs/Jelissa_Summers_Job_Resume.pdf" download>Resume</a></li>
         </ul>
     </div>
     <main>
@@ -108,8 +109,8 @@
                 </div>
                     <!--Project Links -->
                     <div class="project_links">
-                        <button class="project_link" onclick="window.location.href='https://github.com/LunarianDream/Interactive-Card-Details';">Code</button>
-                        <button class="project_link">Site</button>
+                        <a role="button" class="project_link" href="https://github.com/LunarianDream/Interactive-Card-Details" target="_blank">Code</a>
+                        <a role=button class="project_link" href="https://lunariandream.github.io/Interactive-Card-Details/" target="_blank">Site</a>
                     </div>
             </div>
             <div class="project_wrapper">
@@ -127,8 +128,8 @@
                 </div>
                 <!--Project Links -->
                 <div class="project_links">
-                    <button class="project_link">Code</button>
-                    <button class="project_link">Site</button>
+                    <a role=button class="project_link" href="https://github.com/LunarianDream/base-apparel" target="_blank">Code</a>
+                    <a role=button class="project_link" href="https://lunariandream.github.io/base-apparel/" target="_blank">Site</a>
                 </div>
             </div>
             <div class="project_wrapper">
