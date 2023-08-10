@@ -488,7 +488,7 @@ footer img {
     main {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 50vh auto .5fr auto 1fr;
+        grid-template-rows: minmax(500px, 50vh) auto .5fr auto 1fr;
         justify-content: center;
     }
 
