@@ -92,7 +92,7 @@ p {
     font-size: 1.25rem;
 }
 
-button, a[role="button"] {
+button, a.resume_btn {
     background-color: var(--accent-color-1-2);
     border: none;
     border-radius: 20px;
@@ -493,7 +493,7 @@ footer img {
     }
 
     header {
-        height: 2.5rem;
+        height: 60px;
     }
 
     .main_navigation {
@@ -512,6 +512,7 @@ footer img {
 
     .desktop_navigation li {
         display: inline-block;
+        font-size: 1.5em;
         font-weight: 300;
         padding-inline: 1rem;
     }
@@ -519,7 +520,8 @@ footer img {
     .resume_btn {
         display: block;
         align-self: center;
-        width: 8rem;
+        width: 10rem;
+        margin-right: 1em;
     }
 
     .mobile_menu_btn {
