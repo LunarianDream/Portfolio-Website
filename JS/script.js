@@ -50,15 +50,42 @@ form.addEventListener('submit', (e) => {
     formValidation();
 });
 
+////////////////////////
+/* Functions */
+////////////////////////
+
+let formatPhoneNumber = function () {
+    // const cleaned = ('' + phoneNumberString).replace(/\D/g, "");
+    // // const matched = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+    // // if (matched) {
+    // //     return phoneField.value = '(' + matched[1] + ')-' + matched[2] + '-' + matched[3];
+    // // }
+
+    if (phoneField.value.length == 3) {
+        return phoneField.value = '(' + phoneField.value.slice(0,3) + ')-' + phoneField.value.slice(3);
+    } else if (phoneField.value.length == 9) {
+        return phoneField.value = phoneField.value.slice(0,9) + '-'
+    }
+
+    return null
+}
+
+let phoneNumber = function () {
+    let phoneNum = phoneField.value;
+    phoneNum = formatPhoneNumber(phoneNum);
+}
+
 function formValidation () {
 
     const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
+
+    const phoneRegex = /^(\(\d{3}\))-\d{3}-\d{4}$/; 
 
     let error = function (field, msg) {
         field.style.borderColor = 'red';
         field.nextElementSibling.style.display = 'block';
         field.nextElementSibling.innerText = msg;
-        isValid = false
+        return isValid = false
     }
 
 /* ========================
@@ -81,37 +108,41 @@ If fields are empty
 
     if (nameField.value.match('[0-9]+')) {
         error(nameField, `Cannot contain numbers.`);
-        // nameField.nextElementSibling.innerText = `Cannot contain numbers.`
     };
 
     /* ========================
     Phone Number
     =========================== */
 
-    if (phoneField.value.match('[a-z]+') || phoneField.value.length < 10) {
+    if (phoneField.value.match('[a-z]+') || (phoneField.value.length >= 1 && phoneField.value.length < 10)) {
         error(phoneField, 'Please enter a valid US Telephone Number.');
+    } else if (phoneRegex.test(phoneField.value) == false) {
+        error(phoneField, 'Please use (XXX)-XXX-XXX number format')
     };
+
 
     /* ========================
     Email
     =========================== */
 
-    if (emailRegex.test(emailField.value) == false) {
+    if (emailRegex.test(emailField.value) == false && emailField.value.length >= 1) {
         error(emailField, 'Please enter a valid email.');
     };
 
     /* ========================
     Company
     =========================== */
-
+    
+    if (companyField.value.length < 1) {
+        error(companyField, 'Cannot be blank')
+    }
 
 
     /* ========================
     Comments
     =========================== */
 
-    if (commentBox.value.length < 50) {
-        // commentBox.nextElementSibling.innerText = `Must be at least 50 characters.`
+    if (commentBox.value.length >= 1 & commentBox.value.length <= 49) {
         error(commentBox, 'Must be at least 50 characters.');
     };
 
@@ -129,5 +160,6 @@ If fields are empty
 /////////////////////////////////
 /* Buttons */
 /////////////////////////////////
-
+phoneField.addEventListener('keypress', phoneNumber);
 submitBtn.addEventListener('click', formValidation);
+

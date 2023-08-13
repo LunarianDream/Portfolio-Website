@@ -22,17 +22,17 @@
     <div class="mobile_menu_overlay overlay_inactive"> 
     </div>
     <header>
+        <img class="logo" src="./IMGS/jelissa_logo.png" />
         <nav class="main_navigation">
             <ul class="desktop_navigation">
                 <li><a class="nav_link" href="#about">About</a></li>
                 <li><a class="nav_link" href="#skills">Skills</a></li>
                 <li><a class="nav_link" href="#projects">Projects</a></li>
                 <li><a class="nav_link" href="#contact_me">Contact Me</a></li>
-                
             </ul>
             <button class="mobile_menu_btn">&#9776;</button>
-            <a role="button" class="resume_btn" href="./Resources/Docs/Jelissa_Summers_Job_Resume.pdf" download>Resume</a>
         </nav>
+        <a role="button" class="resume_btn" href="./Resources/Docs/Jelissa_Summers_Job_Resume.pdf" download>Resume</a>
     </header>
     <div class="mobile_menu_container closed">
         <button class="mobile_menu_btn"><img src="./Resources/Icons/x-letter.svg"></button>
@@ -141,7 +141,7 @@
         </section>
         <section id="contact_me">
             <h3>Let's Connect</h3>
-            <form method="POST" action="https://google.com">
+            <form method="POST" action="">
                 <div class="form_row">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name">
@@ -155,7 +155,7 @@
                 </div>
                 <div class="form_row">
                     <label for="phone">Telephone Number</label>
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" maxlength="14">
                     <span class="error">Please enter a valid US telephone number.</span>
 
                 </div>

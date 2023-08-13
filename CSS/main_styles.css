@@ -70,13 +70,14 @@ h1::after {
     width: 100%;
     background-color: var(--accent-color-2);
     height: 1px;
+    max-width: 500px;
     position: absolute;
     left: 0;
     bottom: 0;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 100;
 }
 
@@ -92,7 +93,7 @@ p {
     font-size: 1.25rem;
 }
 
-button, a.resume_btn {
+button, a.resume_btn, a.project_link {
     background-color: var(--accent-color-1-2);
     border: none;
     border-radius: 20px;
@@ -125,6 +126,16 @@ header {
     justify-content: space-between;
 }
 
+.logo {
+    aspect-ratio: 1/1;
+    -webkit-aspect-ratio: 1/1;
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    margin-left: 1rem;
+
+}
+
 .main_navigation ul {
     list-style-type: none;
 }
@@ -152,7 +163,7 @@ header {
     background-color: var(--accent-color-3-1);
     border-left: 3px solid var(--accent-color-2);
     border-radius: 20px 0 0 20px;
-    box-shadow: -4px 4px 15px var(--primary-color);
+    box-shadow: none;
     width: 60vw;
     height: 100vh;
     position: fixed;
@@ -168,7 +179,9 @@ header {
 }
 
 .open {
+    display: block;
     transform: translateX(0%);
+    box-shadow: -4px 4px 15px var(--primary-color);
 
 }
 
@@ -249,6 +262,7 @@ header {
     background-size: cover;
     position: absolute;
     width: 43%;
+    max-width: 190px;
     aspect-ratio: 1/1;
     -webkit-aspect-retio: 1/1;
     left: 7px;
@@ -257,14 +271,10 @@ header {
 
 .intro {
     position: absolute;
-    right: 0;
+    right: 0%;
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-}
-
-h2 {
-    font-size: 1.2rem;
 }
 
 /* ====== About Section ====== */
@@ -291,6 +301,14 @@ h2 {
     grid-column: 1/-1;
     grid-row: 3/4;
     position: relative;
+    background-image: conic-gradient(from 45deg, transparent 270deg, var(--primary-color) 270deg);
+    background-repeat: repeat-x;
+    background-size: 100px 100px;
+    /* background-position: left 0px; */
+}
+
+#skills h3 {
+    margin-top: 3rem;
 }
 
 .skills_container {
@@ -338,10 +356,21 @@ h4 {
     grid-column: 1/-1;
     grid-row: 4/5;
     position: relative;
+
+    background-image: conic-gradient(from 225deg, transparent 270deg, var(--primary-color) 225deg);
+    background-repeat: repeat-x;
+    background-size: 100px 100px;
+    background-position: left 0px bottom 0px;
+
+    
 }
 
 .project_wrapper {
     margin: 1rem 0;
+}
+
+.project_wrapper:last-child {
+    margin-bottom: 5rem;
 }
 
 .project_title {
@@ -500,9 +529,8 @@ footer img {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: space-between;
-        align-items: flex-end;
-        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
     }
 
     .desktop_navigation {
@@ -512,7 +540,7 @@ footer img {
 
     .desktop_navigation li {
         display: inline-block;
-        font-size: 1.5em;
+        font-size: 1.25em;
         font-weight: 300;
         padding-inline: 1rem;
     }
@@ -607,6 +635,10 @@ footer img {
 ============================================ */
 
 @media only screen and (min-width: 1080px) {
+
+    .desktop_navigation li {
+        font-size: 1.5rem;
+    }
 
     .skills_container {
         display: flex;
