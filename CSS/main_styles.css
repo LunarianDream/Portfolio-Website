@@ -4,6 +4,7 @@
     --accent-color-1: hsl(253, 65%, 71%);
     --accent-color-1-2: hsla(253, 65%, 71%, 50%);
     --accent-color-2: hsl(170, 64%, 69%);
+    --accent-color-2-1: hsla(170,);
     --accent-color-2-2: hsla(170, 64%, 69%, 30%);
     --accent-color-3: hsl(178, 100%, 87%);
     --accent-color-3-1: hsla(178, 100%, 87%, 10%); 
@@ -87,6 +88,7 @@ h3 {
     padding: 1rem 0;
     text-align: center;
     text-decoration: underline;
+    text-underline-offset: .5rem;
 }
 
 p {
@@ -361,22 +363,36 @@ h4 {
     background-repeat: repeat-x;
     background-size: 100px 100px;
     background-position: left 0px bottom 0px;
-
-    
 }
 
-.project_wrapper {
-    margin: 1rem 0;
-}
-
-.project_wrapper:last-child {
+.project_container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    align-items: center;
     margin-bottom: 5rem;
+}
+
+.project_card {
+    background-color: var(--accent-color-2-2);
+    border: 3px solid var(--accent-color-1);
+    border-radius: 20px;
+    padding-bottom: 1em;
+    width: 300px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    flex-basis: 300px;
+    gap: 1em;
 }
 
 .project_title {
     font-size: 1.1rem;
     text-align: center;
     padding-bottom: .5rem;
+    margin: .5rem;
     text-decoration: dashed underline;
     text-underline-offset: .25em;
     -webkit-text-underline-offset: .25em;
@@ -384,9 +400,11 @@ h4 {
 }
 
 .project_description {
-    background-color: var(--accent-color-2-2);
-    color: var(--accent-color-1);
+    color: var(--primary-color);
     padding: 1em;
+    height: 150px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 .project_links {
@@ -399,7 +417,7 @@ h4 {
 }
 
 .project_link {
-    width: 25%;
+    width: 100px;
 }
 
 /* ====== Contact Me Section ====== */
@@ -509,11 +527,6 @@ footer img {
         font-size: 1.25rem;
     }
 
-    .project_link {
-        font-size: 1.25rem;
-        width: 150px;
-    }
-
     main {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -542,7 +555,7 @@ footer img {
         display: inline-block;
         font-size: 1.25em;
         font-weight: 300;
-        padding-inline: 1rem;
+        padding-inline: .5rem;
     }
 
     .resume_btn {
@@ -609,6 +622,14 @@ footer img {
         grid-row: 4/5;
     }
 
+    .project_container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
     /* ====== Contact Me Section ====== */
 
     #contact_me {
@@ -670,24 +691,4 @@ footer img {
         width: 200px;
     }
 
-    .project_info_container {
-        background-color: var(--accent-color-2-2);
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    
-    .project_description_container {
-        align-self: center;
-        width: 50%
-    }
-    
-    .project_description {
-        background-color: transparent; 
-    }
-
-    .project_image_container {
-        align-self: stretch;
-        width: 50%;
-    }
 }

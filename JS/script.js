@@ -28,6 +28,40 @@ menuOverlay.addEventListener('click', () => {
 })
 
 ////////////////////////
+/* Project Variables */
+////////////////////////
+
+const projectContainer = document.querySelector('.project_container')
+
+////////////////////////
+/* Project Array */
+////////////////////////
+
+let projectList = [
+    {
+        name: 'News Homepage',
+        image: './IMGS/news-homepage.png',
+        description: 'Basic static news homepage example created using a design from Frontend Mentor.',
+        codeLink: `https://github.com/LunarianDream/News-Homepage`,
+        siteLink: `https://lunariandream.github.io/News-Homepage/`
+    },
+    {
+        name: 'Base Apparel',
+        image: './IMGS/base-apparel.png',
+        description: 'Using design parameters from FrontEnd Mentor, I created a landing home page for a fictional clothing company. This includes form validation for newsletter signups.',
+        codeLink: `https://github.com/LunarianDream/base-apparel`,
+        siteLink: `https://lunariandream.github.io/base-apparel/`
+    },
+    {
+        name: 'Interactive Card Details',
+        image: './IMGS/interactive-card-details.png',
+        description: 'Created a form to enter credit card information. When the card information is keyed into the form, it is also transposed onto the larger card image.',
+        codeLink: `https://github.com/LunarianDream/Interactive-Card-Details`,
+        siteLink: `https://lunariandream.github.io/Interactive-Card-Details/`
+    }
+]
+
+////////////////////////
 /* Form Variables */
 ////////////////////////
 
@@ -157,9 +191,61 @@ If fields are empty
 
 }
 
+function createProjectCard () {
+    for (let pl of projectList) {
+        let {name, image, description, codeLink, siteLink} = pl;
+
+        console.log(name);
+
+        const projectCard = document.createElement('div');
+        projectCard.classList = 'project_card';
+
+        const projectTitle = document.createElement('h4');
+        projectTitle.classList = 'project_title';
+        projectTitle.innerText = name;
+
+        const projectImage = document.createElement('img');
+        projectImage.classList = 'project_image';
+        projectImage.setAttribute('src', image);
+
+        const projectDescription = document.createElement('p');
+        projectDescription.classList = 'project_description';
+        projectDescription.innerText = description;
+
+        const projectLinks = document.createElement('div');
+        projectLinks.classList = 'project_links';
+
+        const codeLinkButton = document.createElement('a');
+        codeLinkButton.classList = 'project_link';
+        codeLinkButton.setAttribute('role', 'button');
+        codeLinkButton.setAttribute('href', codeLink);
+        codeLinkButton.setAttribute('target', "_blank")
+        codeLinkButton.innerText = 'Code'
+
+        const siteLinkButton = document.createElement('a');
+        siteLinkButton.classList = 'project_link';
+        siteLinkButton.setAttribute('role', 'button');
+        siteLinkButton.setAttribute('href', siteLink);
+        siteLinkButton.setAttribute('target', "_blank")
+        siteLinkButton.innerText = 'Site'
+
+
+        projectContainer.appendChild(projectCard);
+        projectCard.appendChild(projectTitle);
+        projectCard.appendChild(projectImage);
+        projectCard.appendChild(projectDescription);
+        projectCard.appendChild(projectLinks);
+
+        projectLinks.appendChild(codeLinkButton);
+        projectLinks.appendChild(siteLinkButton);
+
+    }
+}
+
 /////////////////////////////////
 /* Buttons */
 /////////////////////////////////
 phoneField.addEventListener('keypress', phoneNumber);
 submitBtn.addEventListener('click', formValidation);
 
+createProjectCard();
